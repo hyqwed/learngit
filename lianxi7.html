@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		行：<input type="text" id='row' />
+		列：<input type="text" id='col' />
+		<input type="button" value="创建" id="btn"/>
+		
+	</body>
+</html>
+<script src="css/public.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var btn = $id("btn");
+	btn.onclick =function(){
+		var rowm =$id("row").value;
+		var colm = $id("col").value;
+		
+		var table=document.createElement("table");
+		table.border = "1";
+		document.body.appendChild(table);
+		
+		for (var i=0; i<rowm; i++) {
+			var tr =document.createElement("tr");
+			
+		for (var j=0; j<=colm; j++) {
+			var td =document.createElement("td");
+			var rand = getRand(0,99);
+			td.innerHTML = rand;
+			td.style.background = getColor();
+			
+			if(j==colm){
+				var a=document.createElement("a");
+				a.href = "#";
+				a.innerHTML = "删除";
+				td.innerHTML = "";
+				td.style.background = "";
+				td.appendChild(a);
+				
+			a.onclick =function(){
+				this.parentNode.parentNode.remove(tr);
+			 }
+			}
+			tr.appendChild(td);
+			
+		}
+			table.appendChild(tr);
+			
+		}
+	}
+</script>

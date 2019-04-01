@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/1m.jpg" alt="" id="img1"/>
+	</body>
+</html>
+<script src="css/public.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var img = document.getElementsByTagName("img")[0];
+	setInterval(fn,100);
+	function fn(){
+		var rand =getRand(1,4);
+		img.src="img/"+rand+"m.jpg";
+	}
+</script>

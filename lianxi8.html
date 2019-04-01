@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="t" />
+		<input type="button" value="请留言" id="btn"/>
+		<ul id="con"></ul>
+	</body>
+</html>
+<script src="css/public.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var t = $id("t");
+	var btn =$id("btn");
+	var con =$id("con");
+	btn.onclick = function(){
+		var tVal = t.value;
+		var li = document.createElement("li");
+		li.innerHTML = tVal;
+		con.insertBefore(li,con.firstChild);
+		if(con.children.length == 6){
+			con.lastElementChild.remove();
+	    }
+	}
+</script>

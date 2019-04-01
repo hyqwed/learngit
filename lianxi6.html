@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			background: #000000;
+		}
+	</style>
+	<body>
+		<!--<img src="img/star.gif" />-->
+	</body>
+</html>
+<script src="css/public.js" type="text/javascript"></script>
+<script type="text/javascript">
+	setInterval(sare,500)
+	function sare(){
+		var img = document.createElement("img");
+		img.style.position = "absolute";
+		img.src ="img/star.gif";
+		document.body.appendChild(img);
+		
+		var rimg = getRand(15,30);
+		img.style.width = rimg + "px";
+		 
+		 var rand = getRand(0,window.innerWidth-rimg);
+		 var ranm = getRand(0,window.innerHeight-rimg);
+		 img.style.top = ranm + "px";
+		 img.style.left = rand + "px";
+		
+		img.onclick = function(){
+			this.parentNode.remove(img);
+		}
+		
+	}
+</script>
