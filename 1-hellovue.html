@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+
+    {{ msg }}
+
+    {{ age }}
+
+    {{ name }}
+
+    <p v-bind:title="msg">我是一个普通的p标签</p>
+
+    <input type="text" v-model="msg" />
+
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    // Vue.config.devtools = false;
+    // Vue.config.productionTip = false;
+
+    var vm = new Vue({
+      // 配置选项
+      el: '#app', // 指定vue实例的挂载点
+
+      data: {     // 配置实例的数据,定义在此的数据,页面中可以使用,使用方式你可以理解为就是一套模板引擎
+
+        msg: 'hello vue',
+
+        age: 19,
+
+        name: '张三'
+
+      },
+    })
+  </script>
+</body>
+</html>
